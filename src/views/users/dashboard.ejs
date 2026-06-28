@@ -1,0 +1,23 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+    <main class="grid">
+        <div class="flex-row">
+            <h1><%= title %></h1>
+            <a class="btn" href="/edit-user/<%= user.user_id %>">Edit My Info</a>
+        </div>
+
+        <section class="grid">
+            <h2>Account info</h2>
+            <ul class="grid rmv_liststyle">
+                <li><strong>Name</strong>: <%= user.first_name %> <%= user.last_name %></li>
+                <li><strong>Username</strong>: <%= user.user_email %></li>
+                <% if (user && user.role_name === 'admin') { %>
+                    <!-- view permission level if admin -->
+                    <li><strong>Permissions</strong>: <%= user.role_name %></li>
+                <% } %>
+            </ul>
+        </section>
+
+    
+    </main>
+<%- include('../partials/footer') %>

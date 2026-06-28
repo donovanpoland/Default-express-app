@@ -1,0 +1,7 @@
+<footer class="site-footer">
+  <p>&copy; <%= new Date().getFullYear() %> <%= site.name %>
+    <% if (NODE_ENV === 'development') { %>
+            (Development mode)
+    <% } %>
+  </p>
+</footer>

@@ -1,0 +1,40 @@
+.btn {
+    background-color: var(--color-accent);
+    color: var(---color-accent);
+
+    border: var(--border-xsm) solid var(--color-accent);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-xsm);
+
+    font-size: 1em;
+    padding: var(--space-2xs);
+    max-width: fit-content;
+    text-decoration: none;
+    
+    text-align: center;
+    align-self: center;
+
+    &:hover{
+        color: var(--color-surface-muted);
+        background-color: var(--color-accent-hover);
+        box-shadow: var(--shadow-sm);
+    }
+}
+
+.btn#toggle-password{
+    font-size: .7rem;
+}
+
+.link {
+    font-size: 1em;
+    /* padding: var(--space-2xs); */
+    text-decoration: none;
+    color: var(--color-accent);
+    text-align: center;
+    align-self: center;
+
+    &:hover{
+        color: var(--color-accent-hover);
+        text-decoration: underline;
+    }
+}

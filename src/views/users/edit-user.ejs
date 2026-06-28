@@ -1,0 +1,50 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+    <main>
+        <h1><%= title %></h1>
+        <form action="/edit-user/<%= user.user_id %>" method="POST" class="grid">
+            <fieldset class="grid card">
+            
+                <label for="firstName">First Name
+                    <input 
+                        type="text" 
+                        name="firstName" 
+                        id="firstName"
+                        maxlength="100"
+                        autocomplete="given-name"
+                        required
+                        value="<%= user.first_name %>"
+                        >
+                </label>
+
+                <label for="lastName">Last Name
+                    <input 
+                        type="text" 
+                        name="lastName" 
+                        id="lastName"
+                        maxlength="100"
+                        autocomplete="family-name"
+                        required
+                        value="<%= user.last_name %>"
+                        >
+                </label>
+
+                <label for="userEmail">Email
+                    <input 
+                    type="email"
+                    id="userEmail"
+                    name="userEmail"
+                    autocomplete="email"
+                    maxlength="255"
+                    required
+                    value="<%= user.user_email %>"
+                    >
+                </label>
+                
+                <button class="btn" type="submit">Save</button>
+            </fieldset>
+        </form>
+
+       
+    </main>
+<%- include('../partials/footer') %>

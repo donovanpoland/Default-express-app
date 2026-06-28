@@ -1,0 +1,37 @@
+{
+  "name": "project-template",
+  "version": "0.0.1",
+  "author": "",
+  "license": "",
+  "description": "Express MVC application base structure.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node --env-file=.env server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "node.js",
+    "servers",
+    "PostgreSQL",
+    "Express",
+    "bcrypt"
+  ],
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "connect-pg-simple": "^10.0.0",
+    "dotenv": "^16.6.1",
+    "ejs": "^6.0.1",
+    "express": "^4.22.2",
+    "express-session": "^1.19.0",
+    "express-validator": "^7.3.2",
+    "pg": "^8.22.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

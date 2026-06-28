@@ -1,0 +1,22 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<main class="grid">
+    <h1><%= title %></h1>
+
+
+    <section class="grid">
+        <h2>Listed users</h2>
+        <ul class="grid rmv_liststyle users">
+            <% users.forEach(user => { %>
+                <li class="grid card">
+                    <span><strong>Name</strong>: <%= user.full_name %></span>
+                    <span><strong>Username</strong>: <%= user.user_email %></span>
+                    <span><strong>Permissions</strong>: <%= user.role_name %></span>
+                </li>
+            <% }); %>
+        </ul>
+    </section>
+</main>
+
+<%- include('../partials/footer') %>

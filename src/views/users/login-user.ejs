@@ -1,0 +1,39 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+    <main class="grid">
+        <h1><%= title %></h1>
+
+        <form action="/login-user" method="POST" class="grid">
+            <fieldset class="grid card">
+
+                <label for="email">Email
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                        value="<%= email ?? '' %>"
+                    />
+                </label>
+
+                <label for="password" >
+                    <span>Password <span id="caps-lock"> </span></span>
+                    <span class="flex-row">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            required
+                        />
+                        <button class="btn" type="button" id="toggle-password"><img src="images/other/eye-solid-full.svg" alt="" title="View Password"></button>
+                    </span>
+                </label>
+                
+                <button class="btn" type="submit">Login</button>
+                
+            </fieldset>
+        </form>
+    </main>   
+
+<%- include('../partials/footer') %>

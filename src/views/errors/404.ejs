@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body>
+  <%- include('../partials/header') %>
+
+  <main>
+    <h1> <%= title %></h1>
+    <section>
+      <h2>An error has occurred</h2>
+      <p>The page your are looking for is missing or not available.</p>
+      <p><a href="/">Return to the home page</a></p>
+    </section>
+
+    <% if (isDevelopment && (error || stack)) { %>
+      <section>
+          <details>
+            <summary>Error details</summary>
+            <% if (error) { %>
+              <pre><%= error %></pre>
+            <% } %>
+            <% if (stack) { %>
+              <pre><%= stack %></pre>
+            <% } %>
+          </details>
+      </section>
+    <% } %>
+  </main>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

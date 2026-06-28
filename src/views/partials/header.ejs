@@ -1,0 +1,35 @@
+  <header class="site-header">
+    <div class="flex-row">
+      <a class="link" id="site-name" href="/"><%= site.name %></a>
+    </div>
+    <nav class="center" aria-label="navigation" id="nav-bar">
+        <ul class="rmv_liststyle">
+            <li><a href="/">Home</a></li>
+            <!-- check if a user is logged in, swap nav items if user is logged in or not -->
+            <% if (isLoggedIn) { %>
+              <li>
+                <form action="/logout-user" method="POST" class="grid">
+                <button class="btn" type="submit">Logout</button>
+                </form>
+              </li>
+            <% } else { %>
+              <li><a href="/register-user">Register</a></li>
+              <li><a href="/login-user">Login</a></li>
+            <% } %>
+        </ul>
+    </nav>
+    <button
+        id="ham-btn"
+        class="hamburger"
+        aria-label="navigation"
+        title="Menu"
+    ></button>
+  </header>
+  <% const messages = flash(); %>
+  <% Object.keys(messages).forEach(type => { %>
+      <% if (messages[type].length > 0) { %>
+        <% messages[type].forEach(msg => { %>
+            <div class="alert <%= type %>"><%= msg %></div>
+        <% }); %>
+      <% } %>
+  <% }); %>
