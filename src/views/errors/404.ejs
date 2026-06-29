@@ -4,16 +4,16 @@
 <body>
   <%- include('../partials/header') %>
 
-  <main>
+  <main class="grid">
     <h1> <%= title %></h1>
-    <section>
+    <section class="flex-column card">
       <h2>An error has occurred</h2>
       <p>The page your are looking for is missing or not available.</p>
       <p><a href="/">Return to the home page</a></p>
     </section>
 
     <% if (isDevelopment && (error || stack)) { %>
-      <section>
+      <section class="grid card">
           <details>
             <summary>Error details</summary>
             <% if (error) { %>

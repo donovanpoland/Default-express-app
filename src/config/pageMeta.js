@@ -21,6 +21,12 @@ export const pageMeta = {
       "Something Went Wrong, The server encountered an error while processing your request.",
       "noindex, nofollow",
     ),
+    429: createMetaData(
+          "429 Too Many Reached",
+          ["rate limit", siteConfig.name, "error 429"],
+          "Too many login or registration attempts were made. Please wait before trying again.",
+          "noindex, nofollow",
+        ),
     registration: createMetaData(
       "Registration",
       ["Create New user", "New account", "Join"],

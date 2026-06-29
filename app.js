@@ -17,6 +17,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 const NODE_ENV = process.env.NODE_ENV || 'production';
+const trustProxyHops = Number(process.env.TRUST_PROXY_HOPS ?? 0);
+if (NODE_ENV === 'production' && trustProxyHops > 0) {
+  app.set('trust proxy', trustProxyHops);
+}
 
 app.set('views', path.join(__dirname, 'src', 'views'));
 app.use(express.static(path.join(__dirname, 'public')));

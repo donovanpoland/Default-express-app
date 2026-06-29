@@ -11,8 +11,11 @@ const errorHandler = (error, req, res, next) => {
     return next(error);
   }
 
-  const statusCode = error.status === 404 ? 404 : 500;
-  const view = statusCode === 404 ? 'errors/404' : 'errors/500';
+  const supportedStatusCodes = new Set([404, 429]);
+  const statusCode = supportedStatusCodes.has(error.status)
+      ? error.status
+      : 500;
+  const view = `errors/${statusCode}`;
   const meta = pageMeta[statusCode];
   const isDevelopment = process.env.NODE_ENV === 'development';
 

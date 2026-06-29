@@ -10,6 +10,12 @@ import {
     requireLogin, requireRole, requireSelf
 } from './controllers/usersController.js';
 
+// middleware rate limiters
+import {
+    loginLimiter,
+    registrationLimiter,
+} from './middleware/rateLimiters.js';
+
 
 // Validation imports
 import {
@@ -32,6 +38,8 @@ router.get('/', index);
 router.get('/register-user', userRegistrationForm);
 router.post(
     '/register-user',
+    // limit number of registrations
+    registrationLimiter,
     // Validate request
     userValidation,
     // Handle errors and preserve first and last names and email on validation error
@@ -46,6 +54,8 @@ router.post(
 router.get('/login-user', loginForm);
 router.post(
     '/login-user',
+    // limit number of logins
+    loginLimiter,
     // Validate request
     loginValidation,
     // Handle errors and preserve email on validation error
